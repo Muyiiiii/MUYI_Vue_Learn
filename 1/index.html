@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vite App</title>
+    <!--    引入vue.js文件-->
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+    <!--    这个模块里的数据是由vue接管的-->
+    <div id="app"></div>
+    <!--    创建vue对象，并关联指定的HTML区域-->
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                name: '哈哈',
+                wechat: 'haha'
+            },
+            method: {
+                clickMe: function () {
+                    //获取this.name
+                    //修改值this.name
+                    this.name = 'alex';
+                    this.wechat = 'haha';
+                }
+            }
+        })
+
+    </script>
+
+</body>
+</html>
