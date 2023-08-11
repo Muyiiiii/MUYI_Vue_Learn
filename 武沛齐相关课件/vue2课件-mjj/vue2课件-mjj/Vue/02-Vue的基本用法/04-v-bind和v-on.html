@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+        .active{
+            background-color: green;
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <!--<button v-on:click = 'handlerChange'>切换颜色</button>-->
+   <!--v-bind 标签中所有的属性 img标签src alt,a标签的href title id class-->
+    <!--<img v-bind:src="imgSrc" v-bind:alt="msg">-->
+    <!--<div class="box" v-bind:class = '{active:isActive}'></div>-->
+
+     <button @mouseenter = 'handlerChange' @mouseleave = 'handlerLeave'>切换颜色</button>
+   <!--v-bind 标签中所有的属性 img标签src alt,a标签的href title id class-->
+    <img :src="imgSrc" :alt="msg">
+    <div class="box" :class = '{active:isActive}'></div>
+</div>
+<!--1.引包-->
+<script src='./vue.js'></script>
+<script>
+    //数据驱动视图  设计模式 MVVM  Model  View  ViewModel
+
+    //声明式的JavaScript框架
+
+//    v-bind和v-on的简便写法 :  @
+    new Vue({
+        el: '#app',
+        data() {
+            //data中是一个函数 函数中return一个对象，可以是空对象 但不能不return
+            return {
+                imgSrc:'./1.jpg',
+                msg:'美女',
+                isActive:true
+            }
+        },
+        methods:{
+            handlerChange(){
+//                this.isActive = !this.isActive;
+                this.isActive = false;
+            },
+            handlerLeave(){
+                this.isActive = true;
+            }
+        }
+       
+    })
+</script>
+
+</body>
+</html>

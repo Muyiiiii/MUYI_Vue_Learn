@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div id="app">
+    <!--模板语法-->
+    <h2>{{ msg }}</h2>
+    <h3>{{ 'hhahda' }}</h3>
+    <h3>{{ 1+1 }}</h3>
+    <h4>{{ {'name':'alex'} }}</h4>
+    <h5>{{ person.name }}</h5>
+    <h2>{{ 1>2? '真的': '假的' }}</h2>
+    <p>{{ msg2.split('').reverse().join('') }}</p>
+    <div>{{ text }}</div>
+</div>
+<!--1.引包-->
+<script src='./vue.js'></script>
+<script>
+    //2.实例化对象
+    new Vue({
+        el:'#app', //绑定那块地
+        data:{
+            //数据属性  种子
+            msg:'黄瓜',
+            person:{
+                name:'wusir'
+            },
+            msg2:'hello Vue',
+            text:'<h2>日天</h2>'
+        }
+    });
+</script>
+
+</body>
+</html>

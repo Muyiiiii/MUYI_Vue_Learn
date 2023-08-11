@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<!--1.let和const-->
+<script>
+
+    //            var a;
+//    console.log(a);
+//    {
+//
+//        var a = 1;
+//        var a = 10
+//
+//    }
+//    console.log(a);
+
+    /*
+    var a = [];
+    for (let i = 0; i < 10; i++) {
+        a[i] = function () {
+            console.log(i);
+        };
+    }
+    a[2](); // 10
+    */
+    //    console.log(a);
+    //    {
+    //a 是1.局部作用域，2.不会存在变量提升 3.变量不能重复声明
+    //        let a = 3;
+    //        let a = 5;
+    //        console.log(a);
+    //    }
+    //    console.log(a);
+
+//    const 局部作用域 不会存在变量提升 不能重复声明，只声明常量 不可变的量
+//    console.log(a);
+    {
+        const a = 5;
+        a = 10;
+//        const a = 10;
+    }
+//    console.log(a);
+</script>
+
+</body>
+</html>

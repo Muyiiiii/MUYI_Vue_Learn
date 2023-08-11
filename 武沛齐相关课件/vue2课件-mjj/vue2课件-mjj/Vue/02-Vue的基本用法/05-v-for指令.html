@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        .active {
+            background-color: green;
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <ul v-if="data.status === 'ok'">
+        <!--v-for的优先级是最高的     diff算法-->
+        <li v-for = '(item,index) in data.users' :key="item.id" >
+            <h3>{{ item.id }} -- {{ item.name }} -- {{ item.age }}</h3>
+        </li>
+    </ul>
+    <div v-for = '(value,key) in person'>
+        {{ key }}-----{{ value }}
+    </div>
+</div>
+<!--1.引包-->
+<script src='./vue.js'></script>
+<script>
+
+    new Vue({
+        el: '#app',
+        data() {
+
+            return {
+                data: {
+                    status: 'ok',
+                    users: [
+                        {id: 1, name: 'alex', age: 18},
+                        {id: 2, name: 'wusir', age: 30},
+                        {id: 3, name: 'yuan', age: 48}
+                    ]
+                },
+                person:{
+                    name:'alex'
+                }
+            }
+        },
+        methods: {}
+
+    })
+</script>
+
+</body>
+</html>
